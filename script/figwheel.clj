@@ -6,7 +6,8 @@
   :build-ids ["dev"]
   :all-builds
   [{:id "dev"
-    :figwheel true
+    :figwheel {:websocket-host "192.168.99.100"}
+    :repl false
     :source-paths ["src"]
     :compiler {:main 'teamlinkup.core
                :asset-path "js"
@@ -14,4 +15,4 @@
                :output-dir "resources/public/js"
                :verbose true}}]})
 
-(ra/cljs-repl)
+(ra/cljs-repl "dev")
